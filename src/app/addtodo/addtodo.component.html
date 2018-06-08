@@ -1,0 +1,35 @@
+<p>
+  addtodo works!
+</p>
+
+<div>
+  <label>Title</label>
+  <input type="text" #titletext required>
+</div>
+
+<div>
+  <label>IsDone</label>
+  <input type="checkbox" #isDonecheckbox>
+</div>
+
+<button (click)="addTodo(titletext.value, isDonecheckbox.checked)">Add new Todo</button>
+
+<p>
+  addtodo works! (using binding, unexpectedly, the added model is referenced)
+</p>
+
+<form (ngSubmit)="addNewTodo()">
+
+  <div>
+    <label for="title">Title</label>
+    <input type="text" name="title" required [(ngModel)]="newTodo.title">
+  </div>
+
+  <div class="form-group">
+    <label for="isDone">IsDone</label>
+    <input type="checkbox" name="isDone" [(ngModel)]="newTodo.isDone">
+  </div>
+
+  <button type="submit">Add new Todo</button>
+
+</form>
